@@ -14,6 +14,6 @@
 
         console.log(`На складе ${goodAmount} единицы товара "${goodName}" на сумму ${goodAmount * goodPrice} деревянных`);
     } else {
-        alert('Вы ввели некорректные данные');
+        console.log('Вы ввели некорректные данные');
     }    
 }
