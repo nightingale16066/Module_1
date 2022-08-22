@@ -1,7 +1,5 @@
-import { listIPv4 } from "./ipv4.js";
+import {listIPv4} from './ipv4.js';
 
-const uniqueIP = (arr) => {
-    return (new Set(arr)).size;
-}
+const uniqueIP = (arr) => (new Set(arr)).size;
 
 console.log(uniqueIP(listIPv4));
