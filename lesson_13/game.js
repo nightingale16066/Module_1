@@ -77,7 +77,7 @@
   };
 
   const gameResult = (me, computer, winTable) => {
-    const pair = me[0] + computer[0];
+    const pair = me[0].toLowerCase() + computer[0];
     for (const [key, value] of Object.entries(winTable)) {
       if (value.includes(pair)) {
         return key;
