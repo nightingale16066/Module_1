@@ -25,6 +25,7 @@
         paper: ['бумага', 'б'],
         rock: ['камень', 'к'],
       },
+      blankInput: 'Вы ничего не ввели. Попробуйте снова или нажмите Отмена',
     },
     eng: {
       res: 'Result',
@@ -48,6 +49,7 @@
         paper: ['paper', 'p'],
         rock: ['rock', 'r'],
       },
+      blankInput: 'You did not write anything. Try again or choose Cansel',
     },
   };
 
@@ -71,8 +73,10 @@
           return true;
         }
       }
-    } else {
+    } else if (userInput === null) {
       return 'cancel';
+    } else {
+      return 'blankInput';
     }
   };
 
@@ -98,7 +102,8 @@
     };
     const lang = getLanguage(language);
     const {res, computer, user, exit, preExit, starter,
-      notification, winTable, possibleValues} = language ? info.eng : info.rus;
+      notification, winTable, possibleValues,
+      blankInput} = language ? info.eng : info.rus;
 
     const updateResults = (res) => {
       if (res === 'win') {
@@ -128,6 +133,9 @@
           showResults();
           return;
         }
+      } else if (checkInput(myChoice, possibleValues) === 'blankInput') {
+        alert(blankInput);
+        start();
       } else {
         const computerChoice = getFigure(lang);
         const gameRes = gameResult(myChoice, computerChoice, winTable);

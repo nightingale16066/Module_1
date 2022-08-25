@@ -1,2 +1,2 @@
-const startGame = window.RPS('ENG');
+const startGame = window.RPS();
 startGame();
