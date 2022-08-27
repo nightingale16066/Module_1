@@ -12,6 +12,10 @@ const es6Items = propsItem.filter(item => item.classList.contains('props__item_s
 
 const [typeT, es6T, closureT, scopesT, asyncT] = document.querySelectorAll('.item__title');
 
+const ads = document.querySelector('.ads');
+ads.remove();
+
+
 closureT.textContent = 'This и прототипы объектов';
 es6T.remove();
 scopesList.prepend(scopesT);
